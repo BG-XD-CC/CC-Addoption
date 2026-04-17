@@ -1,0 +1,79 @@
+<svg width="1366" height="768" viewBox="0 0 1366 768" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1366" y2="768" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8F5EF"/>
+      <stop offset="1" stop-color="#ECE4D7"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <rect width="1366" height="768" fill="url(#bg)"/>
+  <rect x="22" y="18" width="1322" height="732" rx="22" fill="#FCFBF8" filter="url(#shadow)"/>
+
+  <rect x="22" y="18" width="236" height="732" rx="22" fill="#2F3A33"/>
+  <text x="54" y="76" fill="#F6F1E7" font-size="26" font-family="Avenir, Helvetica, sans-serif" font-weight="700">Birthday Hub</text>
+  <text x="54" y="106" fill="#C8D2C8" font-size="13" font-family="Avenir, Helvetica, sans-serif">Basic Edition</text>
+
+  <rect x="44" y="154" width="192" height="42" rx="11" fill="#445549"/>
+  <text x="70" y="181" fill="#FFF9EF" font-size="15" font-family="Avenir, Helvetica, sans-serif" font-weight="700">Dashboard</text>
+  <text x="70" y="227" fill="#E6DBCC" font-size="15" font-family="Avenir, Helvetica, sans-serif">Employees Mgmt</text>
+
+  <text x="294" y="72" fill="#2D2A25" font-size="32" font-family="Avenir, Helvetica, sans-serif" font-weight="700">Dashboard</text>
+  <text x="294" y="100" fill="#766F63" font-size="14" font-family="Avenir, Helvetica, sans-serif">Birthdays, anniversaries, and data quality overview</text>
+
+  <rect x="294" y="126" width="470" height="44" rx="12" fill="#FFF" stroke="#E2DBCF"/>
+  <circle cx="324" cy="148" r="7" stroke="#9A9387" stroke-width="2"/>
+  <line x1="330" y1="154" x2="338" y2="162" stroke="#9A9387" stroke-width="2"/>
+  <text x="352" y="152" fill="#9A9387" font-size="14" font-family="Avenir, Helvetica, sans-serif">Search employee...</text>
+
+  <rect x="780" y="126" width="188" height="44" rx="12" fill="#A9683D"/>
+  <text x="833" y="153" fill="#FFF8EE" font-size="14" font-family="Avenir, Helvetica, sans-serif" font-weight="700">Send Kudo</text>
+
+  <rect x="294" y="194" width="320" height="144" rx="16" fill="#FFF" stroke="#E7DFD2"/>
+  <text x="318" y="228" fill="#2F2B27" font-size="17" font-family="Avenir, Helvetica, sans-serif" font-weight="700">Upcoming Birthdays</text>
+  <text x="318" y="251" fill="#7A7267" font-size="13" font-family="Avenir, Helvetica, sans-serif">Next 7 days</text>
+  <text x="318" y="282" fill="#4B463F" font-size="14" font-family="Avenir, Helvetica, sans-serif">• Sofia Kim - Tue</text>
+  <text x="318" y="306" fill="#4B463F" font-size="14" font-family="Avenir, Helvetica, sans-serif">• Aaron Diaz - Fri</text>
+
+  <rect x="632" y="194" width="320" height="144" rx="16" fill="#FFF" stroke="#E7DFD2"/>
+  <text x="656" y="228" fill="#2F2B27" font-size="17" font-family="Avenir, Helvetica, sans-serif" font-weight="700">Work Anniversaries</text>
+  <text x="656" y="251" fill="#7A7267" font-size="13" font-family="Avenir, Helvetica, sans-serif">This month</text>
+  <text x="656" y="282" fill="#4B463F" font-size="14" font-family="Avenir, Helvetica, sans-serif">• Maya Ali - 5 years</text>
+  <text x="656" y="306" fill="#4B463F" font-size="14" font-family="Avenir, Helvetica, sans-serif">• Lucas Tan - 1 year</text>
+
+  <rect x="970" y="194" width="350" height="250" rx="16" fill="#FFF" stroke="#E7DFD2"/>
+  <text x="994" y="228" fill="#2F2B27" font-size="17" font-family="Avenir, Helvetica, sans-serif" font-weight="700">Data Completeness</text>
+  <text x="994" y="253" fill="#7A7267" font-size="13" font-family="Avenir, Helvetica, sans-serif">Employees missing required fields</text>
+
+  <rect x="994" y="272" width="302" height="42" rx="10" fill="#F9F4EA"/>
+  <text x="1012" y="298" fill="#5E5345" font-size="13" font-family="Avenir, Helvetica, sans-serif">Missing birthday date</text>
+  <text x="1248" y="298" fill="#9C5B31" font-size="13" font-family="Avenir, Helvetica, sans-serif" font-weight="700">4</text>
+
+  <rect x="994" y="322" width="302" height="42" rx="10" fill="#F9F4EA"/>
+  <text x="1012" y="348" fill="#5E5345" font-size="13" font-family="Avenir, Helvetica, sans-serif">Missing company start date</text>
+  <text x="1248" y="348" fill="#9C5B31" font-size="13" font-family="Avenir, Helvetica, sans-serif" font-weight="700">2</text>
+
+  <rect x="994" y="372" width="302" height="42" rx="10" fill="#F9F4EA"/>
+  <text x="1012" y="398" fill="#5E5345" font-size="13" font-family="Avenir, Helvetica, sans-serif">Missing chapter</text>
+  <text x="1248" y="398" fill="#9C5B31" font-size="13" font-family="Avenir, Helvetica, sans-serif" font-weight="700">3</text>
+
+  <rect x="294" y="358" width="658" height="312" rx="16" fill="#FFF" stroke="#E7DFD2"/>
+  <text x="318" y="390" fill="#2F2B27" font-size="17" font-family="Avenir, Helvetica, sans-serif" font-weight="700">Upcoming Timeline</text>
+  <line x1="322" y1="424" x2="920" y2="424" stroke="#EEE7DA"/>
+  <text x="322" y="448" fill="#6E665A" font-size="13" font-family="Avenir, Helvetica, sans-serif">Mar 18</text>
+  <text x="400" y="448" fill="#3F3A33" font-size="14" font-family="Avenir, Helvetica, sans-serif">Sofia Kim birthday</text>
+  <line x1="322" y1="462" x2="920" y2="462" stroke="#EEE7DA"/>
+  <text x="322" y="486" fill="#6E665A" font-size="13" font-family="Avenir, Helvetica, sans-serif">Mar 21</text>
+  <text x="400" y="486" fill="#3F3A33" font-size="14" font-family="Avenir, Helvetica, sans-serif">Aaron Diaz birthday</text>
+  <line x1="322" y1="500" x2="920" y2="500" stroke="#EEE7DA"/>
+  <text x="322" y="524" fill="#6E665A" font-size="13" font-family="Avenir, Helvetica, sans-serif">Mar 26</text>
+  <text x="400" y="524" fill="#3F3A33" font-size="14" font-family="Avenir, Helvetica, sans-serif">Maya Ali anniversary (5y)</text>
+
+  <rect x="970" y="462" width="350" height="208" rx="16" fill="#FFF" stroke="#E7DFD2"/>
+  <text x="994" y="495" fill="#2F2B27" font-size="17" font-family="Avenir, Helvetica, sans-serif" font-weight="700">Quick Stats</text>
+  <text x="994" y="526" fill="#5F5649" font-size="14" font-family="Avenir, Helvetica, sans-serif">Active employees: 84</text>
+  <text x="994" y="551" fill="#5F5649" font-size="14" font-family="Avenir, Helvetica, sans-serif">Birthdays next 7 days: 6</text>
+  <text x="994" y="576" fill="#5F5649" font-size="14" font-family="Avenir, Helvetica, sans-serif">Anniversaries this month: 9</text>
+</svg>
