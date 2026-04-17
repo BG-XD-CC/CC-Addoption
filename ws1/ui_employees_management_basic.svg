@@ -1,0 +1,85 @@
+<svg width="1366" height="768" viewBox="0 0 1366 768" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1366" y2="768" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8F5EF"/>
+      <stop offset="1" stop-color="#ECE4D7"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <rect width="1366" height="768" fill="url(#bg)"/>
+  <rect x="22" y="18" width="1322" height="732" rx="22" fill="#FCFBF8" filter="url(#shadow)"/>
+
+  <rect x="22" y="18" width="236" height="732" rx="22" fill="#2F3A33"/>
+  <text x="54" y="76" fill="#F6F1E7" font-size="26" font-family="Avenir, Helvetica, sans-serif" font-weight="700">Birthday Hub</text>
+  <text x="54" y="106" fill="#C8D2C8" font-size="13" font-family="Avenir, Helvetica, sans-serif">Basic Edition</text>
+
+  <text x="70" y="181" fill="#E6DBCC" font-size="15" font-family="Avenir, Helvetica, sans-serif">Dashboard</text>
+  <rect x="44" y="200" width="192" height="42" rx="11" fill="#445549"/>
+  <text x="70" y="227" fill="#FFF9EF" font-size="15" font-family="Avenir, Helvetica, sans-serif" font-weight="700">Employees Mgmt</text>
+
+  <text x="294" y="72" fill="#2D2A25" font-size="32" font-family="Avenir, Helvetica, sans-serif" font-weight="700">Employees Management</text>
+  <text x="294" y="100" fill="#766F63" font-size="14" font-family="Avenir, Helvetica, sans-serif">Search, sort, and maintain employee records</text>
+
+  <rect x="294" y="126" width="420" height="44" rx="12" fill="#FFF" stroke="#E2DBCF"/>
+  <circle cx="324" cy="148" r="7" stroke="#9A9387" stroke-width="2"/>
+  <line x1="330" y1="154" x2="338" y2="162" stroke="#9A9387" stroke-width="2"/>
+  <text x="352" y="152" fill="#9A9387" font-size="14" font-family="Avenir, Helvetica, sans-serif">Search by name, chapter...</text>
+
+  <rect x="728" y="126" width="170" height="44" rx="12" fill="#F2ECE1" stroke="#DDD3C3"/>
+  <text x="765" y="153" fill="#5C5346" font-size="14" font-family="Avenir, Helvetica, sans-serif">Show deleted</text>
+
+  <rect x="912" y="126" width="186" height="44" rx="12" fill="#A9683D"/>
+  <text x="965" y="153" fill="#FFF8EE" font-size="14" font-family="Avenir, Helvetica, sans-serif" font-weight="700">Add Employee</text>
+
+  <rect x="1112" y="126" width="208" height="44" rx="12" fill="#F2ECE1" stroke="#DDD3C3"/>
+  <text x="1140" y="153" fill="#5C5346" font-size="14" font-family="Avenir, Helvetica, sans-serif">Sort: Start Date</text>
+
+  <rect x="294" y="194" width="1026" height="422" rx="16" fill="#FFF" stroke="#E7DFD2"/>
+
+  <rect x="314" y="214" width="986" height="40" rx="10" fill="#F8F3EA"/>
+  <text x="334" y="239" fill="#7A7267" font-size="12" font-family="Avenir, Helvetica, sans-serif" font-weight="700">Name</text>
+  <text x="530" y="239" fill="#7A7267" font-size="12" font-family="Avenir, Helvetica, sans-serif" font-weight="700">Chapter</text>
+  <text x="680" y="239" fill="#7A7267" font-size="12" font-family="Avenir, Helvetica, sans-serif" font-weight="700">Start Date</text>
+  <text x="820" y="239" fill="#7A7267" font-size="12" font-family="Avenir, Helvetica, sans-serif" font-weight="700">Birthday</text>
+  <text x="960" y="239" fill="#7A7267" font-size="12" font-family="Avenir, Helvetica, sans-serif" font-weight="700">Deleted</text>
+  <text x="1090" y="239" fill="#7A7267" font-size="12" font-family="Avenir, Helvetica, sans-serif" font-weight="700">Actions</text>
+
+  <rect x="314" y="262" width="986" height="48" rx="8" fill="#FFF"/>
+  <text x="334" y="292" fill="#3F3A33" font-size="13" font-family="Avenir, Helvetica, sans-serif">Sofia Kim</text>
+  <text x="530" y="292" fill="#3F3A33" font-size="13" font-family="Avenir, Helvetica, sans-serif">Platform</text>
+  <text x="680" y="292" fill="#3F3A33" font-size="13" font-family="Avenir, Helvetica, sans-serif">2022-08-15</text>
+  <text x="820" y="292" fill="#3F3A33" font-size="13" font-family="Avenir, Helvetica, sans-serif">1995-03-19</text>
+  <text x="960" y="292" fill="#3F3A33" font-size="13" font-family="Avenir, Helvetica, sans-serif">No</text>
+  <text x="1090" y="292" fill="#9A5D32" font-size="13" font-family="Avenir, Helvetica, sans-serif">Edit</text>
+
+  <line x1="314" y1="318" x2="1300" y2="318" stroke="#EFE8DC"/>
+
+  <rect x="314" y="322" width="986" height="48" rx="8" fill="#FFF"/>
+  <text x="334" y="352" fill="#3F3A33" font-size="13" font-family="Avenir, Helvetica, sans-serif">Aaron Diaz</text>
+  <text x="530" y="352" fill="#3F3A33" font-size="13" font-family="Avenir, Helvetica, sans-serif">Data</text>
+  <text x="680" y="352" fill="#3F3A33" font-size="13" font-family="Avenir, Helvetica, sans-serif">2024-01-11</text>
+  <text x="820" y="352" fill="#9A5D32" font-size="13" font-family="Avenir, Helvetica, sans-serif">Missing</text>
+  <text x="960" y="352" fill="#3F3A33" font-size="13" font-family="Avenir, Helvetica, sans-serif">No</text>
+  <text x="1090" y="352" fill="#9A5D32" font-size="13" font-family="Avenir, Helvetica, sans-serif">Edit</text>
+
+  <line x1="314" y1="378" x2="1300" y2="378" stroke="#EFE8DC"/>
+
+  <rect x="314" y="382" width="986" height="48" rx="8" fill="#FFF"/>
+  <text x="334" y="412" fill="#3F3A33" font-size="13" font-family="Avenir, Helvetica, sans-serif">Maya Ali</text>
+  <text x="530" y="412" fill="#3F3A33" font-size="13" font-family="Avenir, Helvetica, sans-serif">Design</text>
+  <text x="680" y="412" fill="#3F3A33" font-size="13" font-family="Avenir, Helvetica, sans-serif">2020-04-01</text>
+  <text x="820" y="412" fill="#3F3A33" font-size="13" font-family="Avenir, Helvetica, sans-serif">1992-09-10</text>
+  <text x="960" y="412" fill="#3F3A33" font-size="13" font-family="Avenir, Helvetica, sans-serif">Yes</text>
+  <text x="1090" y="412" fill="#9A5D32" font-size="13" font-family="Avenir, Helvetica, sans-serif">Restore</text>
+
+  <rect x="294" y="632" width="492" height="98" rx="16" fill="#FFF" stroke="#E7DFD2"/>
+  <text x="318" y="666" fill="#2F2B27" font-size="17" font-family="Avenir, Helvetica, sans-serif" font-weight="700">Restricted Actions</text>
+  <text x="318" y="692" fill="#60574A" font-size="13" font-family="Avenir, Helvetica, sans-serif">Add employee, update information, and soft delete records.</text>
+
+  <rect x="806" y="632" width="514" height="98" rx="16" fill="#FFF" stroke="#E7DFD2"/>
+  <text x="830" y="666" fill="#2F2B27" font-size="17" font-family="Avenir, Helvetica, sans-serif" font-weight="700">Data Quality Cue</text>
+  <text x="830" y="692" fill="#60574A" font-size="13" font-family="Avenir, Helvetica, sans-serif">Rows with missing birthday or start date are highlighted for cleanup.</text>
+</svg>
