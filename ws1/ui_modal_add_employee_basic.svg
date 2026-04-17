@@ -1,0 +1,66 @@
+<svg width="1366" height="768" viewBox="0 0 1366 768" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1366" y2="768" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8F5EF"/>
+      <stop offset="1" stop-color="#ECE4D7"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <rect width="1366" height="768" fill="url(#bg)"/>
+  <rect x="22" y="18" width="1322" height="732" rx="22" fill="#FCFBF8"/>
+  <rect x="22" y="18" width="236" height="732" rx="22" fill="#2F3A33"/>
+  <text x="54" y="76" fill="#F6F1E7" font-size="26" font-family="Avenir, Helvetica, sans-serif" font-weight="700">Birthday Hub</text>
+  <text x="70" y="181" fill="#E6DBCC" font-size="15" font-family="Avenir, Helvetica, sans-serif">Dashboard</text>
+  <rect x="44" y="200" width="192" height="42" rx="11" fill="#445549"/>
+  <text x="70" y="227" fill="#FFF9EF" font-size="15" font-family="Avenir, Helvetica, sans-serif" font-weight="700">Employees Mgmt</text>
+
+  <text x="294" y="72" fill="#2D2A25" font-size="32" font-family="Avenir, Helvetica, sans-serif" font-weight="700">Employees Management</text>
+  <rect x="294" y="126" width="420" height="44" rx="12" fill="#FFF" stroke="#E2DBCF"/>
+  <rect x="912" y="126" width="186" height="44" rx="12" fill="#A9683D"/>
+  <text x="965" y="153" fill="#FFF8EE" font-size="14" font-family="Avenir, Helvetica, sans-serif" font-weight="700">Add Employee</text>
+  <rect x="294" y="194" width="1026" height="422" rx="16" fill="#FFF" stroke="#E7DFD2"/>
+
+  <rect x="0" y="0" width="1366" height="768" fill="#1E1E1E" fill-opacity="0.38"/>
+
+  <rect x="413" y="96" width="540" height="576" rx="18" fill="#FCFBF8" stroke="#E7DFD2" filter="url(#shadow)"/>
+  <text x="445" y="142" fill="#2F2B27" font-size="26" font-family="Avenir, Helvetica, sans-serif" font-weight="700">Add Employee</text>
+  <text x="445" y="168" fill="#746D62" font-size="13" font-family="Avenir, Helvetica, sans-serif">Create a new employee record</text>
+  <line x1="445" y1="184" x2="921" y2="184" stroke="#ECE4D8"/>
+
+  <text x="445" y="215" fill="#625A4E" font-size="13" font-family="Avenir, Helvetica, sans-serif">Full name *</text>
+  <rect x="445" y="224" width="476" height="42" rx="10" fill="#FFF" stroke="#DED4C5"/>
+  <text x="461" y="250" fill="#9A9285" font-size="13" font-family="Avenir, Helvetica, sans-serif">Enter full name</text>
+
+  <text x="445" y="292" fill="#625A4E" font-size="13" font-family="Avenir, Helvetica, sans-serif">Birthday date</text>
+  <rect x="445" y="301" width="228" height="42" rx="10" fill="#FFF" stroke="#DED4C5"/>
+  <text x="461" y="327" fill="#9A9285" font-size="13" font-family="Avenir, Helvetica, sans-serif">YYYY-MM-DD</text>
+
+  <text x="693" y="292" fill="#625A4E" font-size="13" font-family="Avenir, Helvetica, sans-serif">Company start date *</text>
+  <rect x="693" y="301" width="228" height="42" rx="10" fill="#FFF" stroke="#DED4C5"/>
+  <text x="709" y="327" fill="#9A9285" font-size="13" font-family="Avenir, Helvetica, sans-serif">YYYY-MM-DD</text>
+
+  <text x="445" y="369" fill="#625A4E" font-size="13" font-family="Avenir, Helvetica, sans-serif">Chapter *</text>
+  <rect x="445" y="378" width="228" height="42" rx="10" fill="#FFF" stroke="#DED4C5"/>
+  <text x="461" y="404" fill="#9A9285" font-size="13" font-family="Avenir, Helvetica, sans-serif">Select chapter</text>
+
+  <text x="693" y="369" fill="#625A4E" font-size="13" font-family="Avenir, Helvetica, sans-serif">Manager</text>
+  <rect x="693" y="378" width="228" height="42" rx="10" fill="#FFF" stroke="#DED4C5"/>
+  <text x="709" y="404" fill="#9A9285" font-size="13" font-family="Avenir, Helvetica, sans-serif">Enter manager</text>
+
+  <text x="445" y="446" fill="#625A4E" font-size="13" font-family="Avenir, Helvetica, sans-serif">Position</text>
+  <rect x="445" y="455" width="476" height="42" rx="10" fill="#FFF" stroke="#DED4C5"/>
+  <text x="461" y="481" fill="#9A9285" font-size="13" font-family="Avenir, Helvetica, sans-serif">Enter position</text>
+
+  <rect x="445" y="517" width="476" height="54" rx="12" fill="#F8F3EA"/>
+  <text x="461" y="539" fill="#7A7267" font-size="12" font-family="Avenir, Helvetica, sans-serif" font-weight="700">Validation</text>
+  <text x="461" y="559" fill="#6A6154" font-size="12" font-family="Avenir, Helvetica, sans-serif">Required: Full name, company start date, chapter</text>
+
+  <rect x="445" y="592" width="128" height="42" rx="10" fill="#F1EBE1" stroke="#DBD0BF"/>
+  <text x="486" y="618" fill="#5F5649" font-size="14" font-family="Avenir, Helvetica, sans-serif">Cancel</text>
+
+  <rect x="773" y="592" width="148" height="42" rx="10" fill="#A9683D"/>
+  <text x="807" y="618" fill="#FFF8EE" font-size="14" font-family="Avenir, Helvetica, sans-serif" font-weight="700">Create employee</text>
+</svg>
