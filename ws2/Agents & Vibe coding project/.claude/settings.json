@@ -1,0 +1,74 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Glob",
+      "Grep",
+      "Bash(npm run *)",
+      "Bash(npm install *)",
+      "Bash(npm ls *)",
+      "Bash(npm outdated *)",
+      "Bash(npm audit *)",
+      "Bash(npx prisma *)",
+      "Bash(npx tsx *)",
+      "Bash(npx next *)",
+      "Bash(git status *)",
+      "Bash(git log *)",
+      "Bash(git diff *)",
+      "Bash(git branch *)",
+      "Bash(git show *)",
+      "Bash(ls *)",
+      "Bash(cat *)",
+      "Bash(head *)",
+      "Bash(tail *)",
+      "Bash(wc *)",
+      "Bash(which *)",
+      "Bash(node --version *)",
+      "Bash(npm --version *)"
+    ],
+    "deny": [
+      "Bash(rm -rf /)",
+      "Bash(rm -rf ~)",
+      "Bash(rm -rf /*)",
+      "Bash(rm -rf .)",
+      "Bash(rm -rf ./*)",
+      "Bash(rm -rf ../*)",
+      "Edit(.env*)",
+      "Write(.env*)",
+      "Read(.env*)",
+      "Edit(*.pem)",
+      "Write(*.pem)",
+      "Read(*.pem)",
+      "Edit(*credentials*)",
+      "Write(*credentials*)",
+      "Edit(*secret*)",
+      "Write(*secret*)",
+      "Edit(**/id_rsa*)",
+      "Write(**/id_rsa*)",
+      "Read(**/id_rsa*)",
+      "Edit(**/.ssh/*)",
+      "Write(**/.ssh/*)",
+      "Read(**/.ssh/*)",
+      "Bash(curl * | sh*)",
+      "Bash(curl * | bash*)",
+      "Bash(wget * | sh*)",
+      "Bash(wget * | bash*)"
+    ]
+  },
+  "sandbox": {
+    "filesystem": {
+      "denyRead": [
+        "~/.ssh",
+        "~/.gnupg",
+        "~/.aws/credentials",
+        "~/.config/gcloud"
+      ],
+      "denyWrite": [
+        "~/.ssh",
+        "~/.gnupg",
+        "~/.aws",
+        "~/.config/gcloud"
+      ]
+    }
+  }
+}
