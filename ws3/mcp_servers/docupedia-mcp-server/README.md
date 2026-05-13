@@ -1,6 +1,6 @@
 # Docupedia MCP Server
 
-An MCP (Model Context Protocol) server for Docupedia (Bosch's internal Confluence Server/Data Center). Supports two authentication methods: PAT token (private network) or browser session cookies (Entra SSO with 2FA/device compliance for users outside the private network).
+An MCP (Model Context Protocol) server for Docupedia (Bosch's internal Confluence Server/Data Center). Supports two authentication methods: PAT token (BCN) or browser session cookies (Entra SSO with 2FA/device compliance for Internet client users).
 
 ## Authentication
 
@@ -23,24 +23,33 @@ If both are set, `DOCUPEDIA_PAT` takes precedence.
 
 ## Environment Variables
 
-| Variable                 | Required | Description                              |
-|--------------------------|----------|------------------------------------------|
-| `DOCUPEDIA_URL`          | Yes      | Base Docupedia URL (e.g., `https://docupedia.bosch.com`) |
-| `DOCUPEDIA_PAT`          | No*      | Personal Access Token                    |
-| `DOCUPEDIA_SESSION_COOKIE` | No*      | Full cookie string from browser DevTools |
+| Variable                   | Required | Description                                              |
+| -------------------------- | -------- | -------------------------------------------------------- |
+| `DOCUPEDIA_URL`            | Yes      | Base Docupedia URL (e.g., `https://docupedia.bosch.com`) |
+| `DOCUPEDIA_PAT`            | No\*     | Personal Access Token                                    |
+| `DOCUPEDIA_SESSION_COOKIE` | No\*     | Full cookie string from browser DevTools                 |
 
-*At least one of `DOCUPEDIA_PAT` or `DOCUPEDIA_SESSION_COOKIE` must be set.
+\*At least one of `DOCUPEDIA_PAT` or `DOCUPEDIA_SESSION_COOKIE` must be set.
 
 ## MCP Tools
 
-| Tool | Description |
-|------|-------------|
-| `search_pages` | Search pages using CQL (e.g., `text ~ "hello"`) |
-| `get_page` | Get page content by ID (returned as plain text) |
-| `list_pages_in_space` | List pages in a space by space key |
-| `create_page` | Create a new page (plain text body, optional parent) |
-| `update_page` | Update an existing page's title and content |
-| `add_comment` | Add a comment to a page |
+| Tool                  | Description                                          |
+| --------------------- | ---------------------------------------------------- |
+| `search_pages`        | Search pages using CQL (e.g., `text ~ "hello"`)      |
+| `get_page`            | Get page content by ID (returned as plain text)      |
+| `list_pages_in_space` | List pages in a space by space key                   |
+| `create_page`         | Create a new page (plain text body, optional parent) |
+| `update_page`         | Update an existing page's title and content          |
+| `add_comment`         | Add a comment to a page                              |
+
+## Where to put the config (Claude Code)
+
+> ⚠️ **Heads up:** Claude Code reads MCP server config from one of these locations — **NOT** from `~/.claude/mcp.json` (that path is ignored by the CLI):
+>
+> - **`~/.claude.json`** — user-global config, root-level `mcpServers` key. This is what `claude mcp add` writes to.
+> - **`<project>/.mcp.json`** — project-scoped, only loaded when running `claude` from that directory.
+>
+> If you put your config in `~/.claude/mcp.json` and the server says `MCP error -32000: Connection closed`, that's almost certainly why. Move the entry to `~/.claude.json` (or use `claude mcp add`) and reconnect.
 
 ## Running with uv (local)
 
@@ -83,10 +92,15 @@ docker build -t docupedia-mcp-server .
       "type": "stdio",
       "command": "docker",
       "args": [
-        "run", "--rm", "-i",
-        "-e", "DOCUPEDIA_URL",
-        "-e", "DOCUPEDIA_PAT",
-        "-e", "DOCUPEDIA_SESSION_COOKIE",
+        "run",
+        "--rm",
+        "-i",
+        "-e",
+        "DOCUPEDIA_URL",
+        "-e",
+        "DOCUPEDIA_PAT",
+        "-e",
+        "DOCUPEDIA_SESSION_COOKIE",
         "docupedia-mcp-server"
       ],
       "env": {

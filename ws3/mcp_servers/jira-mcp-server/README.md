@@ -1,6 +1,6 @@
 # Jira MCP Server
 
-An MCP (Model Context Protocol) server for Jira Server/Data Center. Supports two authentication methods: PAT token (private network) or browser session cookies (Entra SSO with 2FA/device compliance for users outside the private network).
+An MCP (Model Context Protocol) server for Jira Server/Data Center. Supports two authentication methods: PAT token (BCN) or browser session cookies (Entra SSO with 2FA/device compliance for Internet client users).
 
 ## Authentication
 
@@ -23,23 +23,32 @@ If both are set, `JIRA_PAT` takes precedence.
 
 ## Environment Variables
 
-| Variable              | Required | Description                              |
-|-----------------------|----------|------------------------------------------|
+| Variable              | Required | Description                                      |
+| --------------------- | -------- | ------------------------------------------------ |
 | `JIRA_URL`            | Yes      | Base Jira URL (e.g., `https://jira.example.com`) |
-| `JIRA_PAT`            | No*      | Personal Access Token                    |
-| `JIRA_SESSION_COOKIE` | No*      | Full cookie string from browser DevTools |
+| `JIRA_PAT`            | No\*     | Personal Access Token                            |
+| `JIRA_SESSION_COOKIE` | No\*     | Full cookie string from browser DevTools         |
 
-*At least one of `JIRA_PAT` or `JIRA_SESSION_COOKIE` must be set.
+\*At least one of `JIRA_PAT` or `JIRA_SESSION_COOKIE` must be set.
 
 ## MCP Tools
 
-| Tool | Description |
-|------|-------------|
-| `search_issues` | Search issues using JQL (e.g., `assignee = currentUser()`) |
-| `get_issue` | Get full details of an issue by key (e.g., `PROJ-123`) |
-| `assign_issue` | Assign an issue to a Jira username |
-| `transition_issue` | Change issue status (e.g., "In Progress", "Done") |
-| `add_comment` | Add a comment to an issue |
+| Tool               | Description                                                |
+| ------------------ | ---------------------------------------------------------- |
+| `search_issues`    | Search issues using JQL (e.g., `assignee = currentUser()`) |
+| `get_issue`        | Get full details of an issue by key (e.g., `PROJ-123`)     |
+| `assign_issue`     | Assign an issue to a Jira username                         |
+| `transition_issue` | Change issue status (e.g., "In Progress", "Done")          |
+| `add_comment`      | Add a comment to an issue                                  |
+
+## Where to put the config (Claude Code)
+
+> ⚠️ **Heads up:** Claude Code reads MCP server config from one of these locations — **NOT** from `~/.claude/mcp.json` (that path is ignored by the CLI):
+>
+> - **`~/.claude.json`** — user-global config, root-level `mcpServers` key. This is what `claude mcp add` writes to.
+> - **`<project>/.mcp.json`** — project-scoped, only loaded when running `claude` from that directory.
+>
+> If you put your config in `~/.claude/mcp.json` and the server says `MCP error -32000: Connection closed`, that's almost certainly why. Move the entry to `~/.claude.json` (or use `claude mcp add`) and reconnect.
 
 ## Running with uv (local)
 
@@ -82,9 +91,13 @@ docker build -t jira-mcp-server .
       "type": "stdio",
       "command": "docker",
       "args": [
-        "run", "--rm", "-i",
-        "-e", "JIRA_URL",
-        "-e", "JIRA_SESSION_COOKIE",
+        "run",
+        "--rm",
+        "-i",
+        "-e",
+        "JIRA_URL",
+        "-e",
+        "JIRA_SESSION_COOKIE",
         "jira-mcp-server"
       ],
       "env": {

@@ -5,6 +5,8 @@ description = "Simple MCP server that greets people in multiple languages"
 requires-python = ">=3.13"
 dependencies = [
     "mcp>=1.0.0",
+    "fastapi>=0.115.0",
+    "uvicorn>=0.30.0",
 ]
 
 [build-system]
