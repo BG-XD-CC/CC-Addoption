@@ -128,6 +128,18 @@ Find the `mcpServers` section (or create it) and add the block below. Replace th
     ],
     "env": {}
   },
+  "docupedia2": {
+    "type": "stdio",
+    "command": "uvx",
+    "args": [
+      "mcp-atlassian",
+      "--confluence-url",
+      "<confluence URL>",
+      "--confluence-personal-token",
+      "YOUR_DOCUPEDIA2_TOKEN_HERE"
+    ],
+    "env": {}
+  },
   "bitbucket": {
     "command": "npx",
     "args": [
