@@ -91,14 +91,58 @@ You need **3 personal access tokens** — one per service. These are generated o
 
 ## Configure Claude Code
 
-### Step 1 — Open `~/.claude.json`
+Choose one of the two options below.
+
+---
+
+### Option A — CLI commands (recommended)
+
+Run these commands in your terminal. Claude Code writes the config automatically.
+
+**Jira**
+```bash
+claude mcp add jira uvx -- mcp-atlassian \
+  --jira-url <JIRA URL><your-tracker-instance> \
+  --jira-personal-token YOUR_JIRA_TOKEN
+```
+
+**Docupedia**
+```bash
+claude mcp add docupedia uvx -- mcp-atlassian \
+  --confluence-url <confluence URL> \
+  --confluence-personal-token YOUR_DOCUPEDIA_TOKEN
+```
+
+**Docupedia 2**
+```bash
+claude mcp add docupedia2 uvx -- mcp-atlassian \
+  --confluence-url <confluence URL> \
+  --confluence-personal-token YOUR_DOCUPEDIA2_TOKEN
+```
+
+**Bitbucket**
+```bash
+claude mcp add bitbucket npx -- -y @nexus2520/bitbucket-mcp-server \
+  -e BITBUCKET_BASE_URL=https://sourcecode.socialcoding.bosch.com \
+  -e BITBUCKET_USERNAME=YOUR_NT_USERNAME@bosch.com \
+  -e BITBUCKET_TOKEN=YOUR_BITBUCKET_TOKEN
+```
+
+Verify all servers are registered:
+```bash
+claude mcp list
+```
+
+---
+
+### Option B — Manual JSON edit
+
+Open the Claude Code config file directly:
 
 | Platform | Path |
 |----------|------|
 | Mac      | `~/.claude.json` |
 | Windows  | `C:\Users\<username>\.claude.json` |
-
-### Step 2 — Add the MCP servers
 
 Find the `mcpServers` section (or create it) and add the block below. Replace the placeholder values:
 
@@ -156,6 +200,94 @@ Find the `mcpServers` section (or create it) and add the block below. Replace th
 ```
 
 > **Security note:** Never commit this file to git. The config file lives outside your project by default.
+
+---
+
+## Securing Your Tokens with Environment Variables
+
+Hardcoding tokens in `~/.claude.json` works but is risky if you share or back up your home directory. A safer approach is to store tokens as OS environment variables and reference them in the config.
+
+### Step 1 — Store tokens in your shell profile
+
+**Mac** — add to `~/.zshrc` (or `~/.bashrc`):
+```bash
+export JIRA_TOKEN="your-jira-token"
+export DOCUPEDIA_TOKEN="your-docupedia-token"
+export DOCUPEDIA2_TOKEN="your-docupedia2-token"
+export BITBUCKET_TOKEN="your-bitbucket-token"
+```
+Apply immediately:
+```bash
+source ~/.zshrc
+```
+
+**Windows** — set as user environment variables in PowerShell:
+```powershell
+[System.Environment]::SetEnvironmentVariable("JIRA_TOKEN", "your-jira-token", "User")
+[System.Environment]::SetEnvironmentVariable("DOCUPEDIA_TOKEN", "your-docupedia-token", "User")
+[System.Environment]::SetEnvironmentVariable("DOCUPEDIA2_TOKEN", "your-docupedia2-token", "User")
+[System.Environment]::SetEnvironmentVariable("BITBUCKET_TOKEN", "your-bitbucket-token", "User")
+```
+Restart your terminal after setting them.
+
+### Step 2 — Reference them in `~/.claude.json`
+
+Replace the hardcoded token values with references to your environment variables:
+
+```json
+"mcpServers": {
+  "jira": {
+    "type": "stdio",
+    "command": "uvx",
+    "args": [
+      "mcp-atlassian",
+      "--jira-url",
+      "<JIRA URL><your-tracker-instance>",
+      "--jira-personal-token",
+      "${JIRA_TOKEN}"
+    ],
+    "env": {}
+  },
+  "docupedia": {
+    "type": "stdio",
+    "command": "uvx",
+    "args": [
+      "mcp-atlassian",
+      "--confluence-url",
+      "<confluence URL>",
+      "--confluence-personal-token",
+      "${DOCUPEDIA_TOKEN}"
+    ],
+    "env": {}
+  },
+  "docupedia2": {
+    "type": "stdio",
+    "command": "uvx",
+    "args": [
+      "mcp-atlassian",
+      "--confluence-url",
+      "<confluence URL>",
+      "--confluence-personal-token",
+      "${DOCUPEDIA2_TOKEN}"
+    ],
+    "env": {}
+  },
+  "bitbucket": {
+    "command": "npx",
+    "args": [
+      "-y",
+      "@nexus2520/bitbucket-mcp-server"
+    ],
+    "env": {
+      "BITBUCKET_BASE_URL": "https://sourcecode.socialcoding.bosch.com",
+      "BITBUCKET_USERNAME": "YOUR_NT_USERNAME@bosch.com",
+      "BITBUCKET_TOKEN": "${BITBUCKET_TOKEN}"
+    }
+  }
+}
+```
+
+> Claude Code resolves `${VAR_NAME}` references from the environment at startup — your actual token values never appear in the JSON file.
 
 ---
 
