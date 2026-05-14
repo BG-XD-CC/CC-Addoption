@@ -23,11 +23,11 @@ If both are set, `DOCUPEDIA_PAT` takes precedence.
 
 ## Environment Variables
 
-| Variable                   | Required | Description                                              |
-| -------------------------- | -------- | -------------------------------------------------------- |
-| `DOCUPEDIA_URL`            | Yes      | Base Docupedia URL (e.g., `https://docupedia.bosch.com`) |
-| `DOCUPEDIA_PAT`            | No\*     | Personal Access Token                                    |
-| `DOCUPEDIA_SESSION_COOKIE` | No\*     | Full cookie string from browser DevTools                 |
+| Variable                   | Required | Description                                                                   |
+| -------------------------- | -------- | ----------------------------------------------------------------------------- |
+| `DOCUPEDIA_URL`            | Yes      | Base Docupedia URL (e.g., `<confluence URL>`) |
+| `DOCUPEDIA_PAT`            | No\*     | Personal Access Token                                                         |
+| `DOCUPEDIA_SESSION_COOKIE` | No\*     | Full cookie string from browser DevTools                                      |
 
 \*At least one of `DOCUPEDIA_PAT` or `DOCUPEDIA_SESSION_COOKIE` must be set.
 
@@ -65,9 +65,14 @@ Add to your `.mcp.json`:
     "docupedia": {
       "type": "stdio",
       "command": "uv",
-      "args": ["run", "--directory", "docupedia-mcp-server", "server.py"],
+      "args": [
+        "run",
+        "--directory",
+        "{ABSOLUTE_PATH_TO_MCP_SERVER}",
+        "server.py"
+      ],
       "env": {
-        "DOCUPEDIA_URL": "https://docupedia.bosch.com",
+        "DOCUPEDIA_URL": "<confluence URL>",
         "DOCUPEDIA_SESSION_COOKIE": "<paste full cookie string here>"
       }
     }
@@ -104,7 +109,7 @@ docker build -t docupedia-mcp-server .
         "docupedia-mcp-server"
       ],
       "env": {
-        "DOCUPEDIA_URL": "https://docupedia.bosch.com",
+        "DOCUPEDIA_URL": "<confluence URL>",
         "DOCUPEDIA_SESSION_COOKIE": "<paste full cookie string here>"
       }
     }

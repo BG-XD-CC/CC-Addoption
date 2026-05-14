@@ -23,11 +23,11 @@ If both are set, `JIRA_PAT` takes precedence.
 
 ## Environment Variables
 
-| Variable              | Required | Description                                      |
-| --------------------- | -------- | ------------------------------------------------ |
-| `JIRA_URL`            | Yes      | Base Jira URL (e.g., `https://jira.example.com`) |
-| `JIRA_PAT`            | No\*     | Personal Access Token                            |
-| `JIRA_SESSION_COOKIE` | No\*     | Full cookie string from browser DevTools         |
+| Variable              | Required | Description                                                      |
+| --------------------- | -------- | ---------------------------------------------------------------- |
+| `JIRA_URL`            | Yes      | Base Jira URL (e.g., `<JIRA URL>(03)`) |
+| `JIRA_PAT`            | No\*     | Personal Access Token                                            |
+| `JIRA_SESSION_COOKIE` | No\*     | Full cookie string from browser DevTools                         |
 
 \*At least one of `JIRA_PAT` or `JIRA_SESSION_COOKIE` must be set.
 
@@ -64,9 +64,14 @@ Add to your `.mcp.json`:
     "jira": {
       "type": "stdio",
       "command": "uv",
-      "args": ["run", "--directory", "jira-mcp-server", "server.py"],
+      "args": [
+        "run",
+        "--directory",
+        "{ABSOLUTE_PATH_TO_MCP_SERVER}",
+        "server.py"
+      ],
       "env": {
-        "JIRA_URL": "https://jira.example.com",
+        "JIRA_URL": "<JIRA URL>(03)",
         "JIRA_SESSION_COOKIE": "<paste full cookie string here>"
       }
     }
@@ -101,7 +106,7 @@ docker build -t jira-mcp-server .
         "jira-mcp-server"
       ],
       "env": {
-        "JIRA_URL": "https://jira.example.com",
+        "JIRA_URL": "<JIRA URL>(03)",
         "JIRA_SESSION_COOKIE": "<paste full cookie string here>"
       }
     }
