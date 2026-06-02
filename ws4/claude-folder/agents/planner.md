@@ -2,7 +2,7 @@
 name: planner
 description: Standalone Planner. Writes a complete implementation plan with TDD-shaped steps and concrete code snippets to the absolute path given in the prompt. No clarify Q&A, no JSON. Invoked by the orchestrator (or directly by a human).
 tools: Read, Write, Edit, Bash, Grep, Glob
-model: claude-opus-4-7[1m]
+model: claude-opus-4-7
 effort: max
 ---
 
